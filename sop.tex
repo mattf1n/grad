@@ -45,15 +45,16 @@ we apply causal analysis to understand
 how transformers handle number agreement between nouns and verbs. 
 We find that transformers generally learn two distinct mechanisms
 for agreement, depending on whether the relevant tokens are adjacent or not.
-Subsequent work has used causal analysis 
-for analyzing other linguistic phenomena 
+Subsequent research has built on our work 
+in order to analyze other linguistic phenomena 
 such as distributivity~\cite{Ban2022TestingPL},
 and the effect of relative clauses on agreement~\cite{Ravfogel2021CounterfactualIR}.
 Strengthening our understanding of how 
 (and whether) 
 language models deal with well-studied linguistic phenomena
 can give insight into what inductive biases these models learn, 
-and can guide research towards methods for improvement.
+and can guide research towards a better understanding of our models 
+and how to improve them.
 
 Excited by our findings,
 and starting as a pre-doctoral researcher at the Allen Institute for AI (AI2),
@@ -61,23 +62,24 @@ I decided to next explore how formal language theory
 can increase our understanding of the capabilities of transformer models.
 In particular, I found formal language to be an excellent test-bed for
 studying how well language models 
-\textbf{generalize on highly compositional tasks}. 
+\textbf{generalize on compositional tasks}. 
 Compositional generalization is one area in which 
 neural methods have been shown 
 to consistently underperform humans~\cite{Lake2018GeneralizationWS}.
 This becomes particularly problematic 
 as \textbf{instruction following} emerges 
-as a prominent paradigm~\cite{mishra2021crosstask, Wei2021FinetunedLM}
-for building general-purpose large language models. 
-Instruction following is where a language model is expected to perform a novel task
-(one not seen in training) given only a description of the task.
+as a prominent paradigm
+for building general-purpose models~\cite{mishra2021crosstask, Wei2021FinetunedLM}. 
+Instruction following is where a language model is expected to generalize to a novel task
+(one not seen in training) given only a description of the task, 
+which could be highly compositional.
 Since this paradigm has emerged relatively recently
 little is known about what kinds of tasks current models can be expected to learn.
 To evaluate this and provide a synthetic sandbox for future research,
 I introduce RegSet~\cite{Finlayson2022WhatMI} in my first-author EMNLP 2022 paper 
 (oral presentation) 
 advised by Kyle Richardson, Ashish Sabharwal and Peter Clark. 
-In our work we propose a highly controllable proxy for studying instruction learning
+In our work we propose a controllable proxy for studying instruction learning
 by studying a language models ability to learn to interpret regular expressions.
 Regular expressions are succinct representations of regular languages, 
 a well studied and highly compositional class of formal languages.
@@ -128,7 +130,7 @@ are woefully deficient when it comes to math reasoning.
 I led and contributed to all aspects of the \lila paper,
 including collecting and annotating the datasets,
 the experimental design, running the experiments, and writing the paper.
-My hope is that our high quality, comprehensive evaluation  
+Our high quality, comprehensive evaluation  
 will serve to unify evaluation
 and further the effort towards developing general-purpose math reasoning models.
 
@@ -145,14 +147,13 @@ to self-generate optimal task-specific prompts
 relying only on inference-time sequence probability estimates from the model.
 
 From these research experiences I have found that 
-I am interested in pursuing these types of problems as a PhD student:
+I am interested in pursuing the following types of problems as a PhD student:
 \begin{itemize}
-  \item Tackling problems that deal with generality,
+  \item Problems that deal with generality,
     from compositional generalization, to general purpose reasoning.
-  \item Improving our fundamental understanding of our methods 
-    rather than merely improving performance.
-  \item Pushing beyond the task-specific fine-tuning paradigm
-    by exploring new ways to leverage existing general-purpose models.
+  \item Improving our fundamental understanding of modern NLP methods. 
+  \item Leveraging our theoretical understanding of language and machine learning
+    to uncover novel methods and paradigms for NLP. 
 \end{itemize}
 
 Eventually, I hope to become a PI 

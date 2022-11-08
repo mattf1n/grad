@@ -1,9 +1,8 @@
 # grad
 Application materials
 
-## Essays
-
-See the pdfs in the `out` directory.
+- My essays and CV are in the `out` directory.
+- My publications are on my [Semantic Scholar author page](https://www.semanticscholar.org/author/Matthew-Finlayson/1580418311)
 
 ## Due dates
 

@@ -1,23 +1,29 @@
-\documentclass[12pt]{article}
+\documentclass[11pt]{article}
 
 \usepackage{times}
+\usepackage{xspace}
 \usepackage[margin=1in]{geometry}
 
-\newcommand\lila{\textsc{L\={\i}la}}
+\newcommand\lila{\textsc{L\={\i}la}\xspace}
+\newcommand\inst{INSTITUTE\xspace}
 
 \begin{document}
 
 I first took an interest in computational linguistics 
 while learning to speak Tagalog. 
 Through the process, I learned a deep appreciation for the language's rich morphology,
-and the immense complexity of language in general.
-My enthusiasm for language has not diminished since that time
-and I am excited to pursue a PhD in natural language processing (NLP).
+and the immense complexity of human language.
+My enthusiasm for studying language only increased
+as I began as a undergraduate researcher in NLP at Harvard
+under the mentorship of Stuart Shieber and Yonatan Belinkov at Harvard,
+and subsequently began as a pre-doctoral investigator at AI2 
+advised by Peter Clark and Ashish Sabharwal.
+These mentors, as well as my many amazing colleagues at both institutions,
+have inspired me to pursue a PhD in natural language processing (NLP).
 
 Though some subfields of NLP research 
 have advanced by leaps and bounds in the past few years,
-our understanding of how these advances 
-have come about remains unsatisfactory.
+our understanding of these systems remains unsatisfactory.
 While transformers may get impressive results on, e.g., question answering,
 we do not know what the fundamental limits 
 of what current architectures can compute or approximate,
@@ -26,8 +32,10 @@ Do they learn syntactic rules?
 Can they generalize to new problems composed of known concepts?
 In my PhD I hope to answer some of these questions
 by \textbf{drawing on fields such as formal language theory and syntax
-to develop practical and theoretical frameworks 
-for understanding modern NLP methods}.
+to develop practical and theoretical frameworks} 
+for understanding modern NLP methods, 
+especially when it comes to \textbf{understanding compositional generalization} 
+and using \textbf{pre-trained language models as general-purpose systems}.
 
 \paragraph{Understanding LMs through linguistics and formal language theory.}
 Modern NLP has become largely divorced 
@@ -59,12 +67,12 @@ and how to make them better.
 I also believe that insights from computational methods 
 can contribute to the field of linguistics
 by empirically lower-bounding the computational ingredients 
-for producing various linguistic phenomena that we see in human speech.
+for producing various phenomena that we see in human speech.
 
 As noted earlier, I am also excited by projects 
 that borrow from computation and formal language theory
 to generate insights about LMs.
-This approach makes it possible to answer very general 
+This approach makes it possible to answer 
 questions that might otherwise be very difficult to approach.
 For instance, I used regular languages
 to measure the capabilities of 
@@ -103,81 +111,77 @@ in transformers that we hope to see in natural language settings.
 This approach takes advantage of the well studied properties of formal language
 and gives us fine-grained control over the data.
 
-\paragraph{Understanding generalization in LMs}
-My work on RegSet bridges to another area of research I hope to continue in during my PhD.
+\paragraph{Generalization}
+My work on RegSet bridges to another area of research I hope to continue in during my PhD: generalization.
 Research has shown that neural models consistently to struggle with
-compositional generalization~\cite{Lake2018GeneralizationWS}, 
-which bodes poorly for the instruction following regime I studied with RegSet, 
-where the space of task descriptions is large and highly compositional.
-I am specifically interested in studying and developing models and methods
-that tackle issues of generalization. 
+compositional generalization~\cite{Lake2018GeneralizationWS}. 
+This bodes poorly for models in succeeding on tasks  
+like the instruction following regime I studied with RegSet 
+where the space of task descriptions is both intractably large 
+and highly compositional.
+I am interested in studying and developing models and methods
+that tackle these types of issues.
 
+Some of my past and current work deals with generalization 
+by attempting to develop methods for utilizing pre-trained language models
+to their full capacity as general problem solvers.
 In a preprint currently under submission to ICLR 2023~\cite{Khot2022DecomposedPA},
 I develop a modular prompting method for recursively prompting large LMs 
-in order to vastly improve length generalization on an algorithmic task
-compared to chain-of-thought prompting~\cite{}.
+in order to vastly improve length generalization 
+compared to few-shot and step-by-step reasoning style prompting.
+Currently, I am developing methods for using language models 
+to decode their own task-specific prompts.
+One exciting application of this method would be to explore 
+the possibility of adversarial prompts: 
+prompts that appear to elicit one behavior 
+but cause the model to exhibit another.
+Research into adversarial prompts 
+is an important step towards to developing 
+secure and ethical general-purpose NLP systems. 
 
-While we uncovering shortcomings of neural networks 
-as general instruction followers,
-I became interested in also evaluating neural networks as 
-\textbf{general-purpose math reasoners}.
-To accomplish this,
+A crucial part of developing general-purpose systems is be able to evaluate them.
+As an example, 
+current evaluation schemes fail to holistically evaluate 
+general-purpose math reasoning skills in LMs
+because they are far too narrow in scope.
+Towards improving evaluation in this area, 
 I led a team of 11 researchers in compiling a
 \textbf{comprehensive and diverse natural language math reasoning benchmark.} 
 I introduce the benchmark, \lila~\cite{Mishra2022Lila}, 
-in my first-authored EMNLP 2022 paper and oral presentation.
-Current evaluation schemes fail to holistically evaluate 
-general-purpose math reasoning skills in LMs
-because they are far too narrow in scope. 
-As a result, they often overestimate the ability 
-of particular models optimized for a single type of math reasoning.
-In our large scale effort we draw together a diverse set of mathematical tasks 
-and unite them under a single benchmark of over 140K math problems.
-We provide valuable annotations for mathematical reasoning via program synthesis, 
-where the LM has access to a Python interpreter.
-Our experiments show that multi-task learning, 
+in my first-author EMNLP 2022 paper
+where we draw together a diverse set over 140K math problems.
+We additionally provide valuable annotations for mathematical reasoning via program synthesis, 
+and show that multi-task learning, 
 combined with augmenting the model with a Python interpreter,
-improves general-purpose math reasoning
-and the resulting model is an effective starting point 
-for downstream fine-tuning. 
-At the same time, our benchmark shows LMs, 
-in their current form, 
-are woefully deficient when it comes to math reasoning.
-I led and contributed to all aspects of the \lila paper,
-including collecting and annotating the datasets,
-the experimental design, running the experiments, and writing the paper.
-Our high quality, comprehensive evaluation  
-will serve to unify evaluation
-and further the effort towards developing general-purpose math reasoning models.
+massively improves LMs ability to do math reasoning 
+with explicit reasoning steps.
+Our publicly released multitask model, christened Bh\=askara, 
+outperforms similarly-sized T5 and GPT-Neo models
+when fine-tuning on new mathematical reasoning tasks.
+\lila shows that LMs 
+in their current form 
+are woefully deficient when it comes to math reasoning,
+and highlights the need for these kinds of unified evaluations for 
+aspiring general-purpose math reasoning models.
+During my PhD I hope to continue to develop thoughtful and comprehensive evaluations 
+to measure and promote research into models with greater general utility.
 
-Building off of my work 
-on learning from instructions and general-purpose reasoning, 
-I am currently interested in
-\textbf{learning how to leverage and control LMs beyond fine-tuning}.
-In our preprint~\cite{Khot2022DecomposedPA}, working closely with Tushar Khot and advised by Ashish Sabharwal, we develop methods for using large LMs 
-as problem decomposers and modular sub-problem solvers to improve performance over 
-other prompting techniques such as chain-of-thought~\cite{}. 
-In a current project, 
-I am developing a decoding method for using a LM 
-to self-generate optimal task-specific prompts 
-relying only on inference-time sequence probability estimates from the model.
+\paragraph{Future plans}
+After my PhD and postdoc I hope to become a PI 
+at an institution where I can achieve autonomy in choosing my research directions
+while also pursuing my passion for mentorship teaching.
+Ideally this means a professorship at a research university.
+I value autonomy in research because I work best 
+when I can focus my energy on projects 
+that are intellectually interesting to me.
+I have also especially become aware of the importance of mentorship 
+throughout my undergrad and time at AI2.
+I am passionate about promoting access to mentorship 
+as a way to level the playing field 
+for the next generation of researchers.
 
-From these research experiences I have found that 
-I am interested in pursuing the following types of problems as a PhD student:
-\begin{itemize}
-  \item Problems that deal with generality,
-    from compositional generalization, to general purpose reasoning.
-  \item Improving our fundamental understanding of modern NLP methods. 
-  \item Leveraging our theoretical understanding of language and machine learning
-    to uncover novel methods and paradigms for NLP. 
-\end{itemize}
-
-Eventually, I hope to become a PI 
-at an institution where I can continue to pursue my passion 
-for mentorship and teaching.
-I have thoroughly enjoyed my teaching experiences as an undergrad 
-and look forward to continuing to develop these skills as a PhD.
-
+\paragraph{Fit for \inst} I am specifically interested in joining the CS program at 
+\inst because \ldots Professor NAME's work on \ldots is particularly interesting to me given my interest in \ldots
 
 \bibliography{ref}
 \bibliographystyle{unsrt}

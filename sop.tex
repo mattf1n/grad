@@ -68,15 +68,20 @@ that borrow from formal language theory
 to increase our understanding of LMs.
 This approach makes it possible to answer 
 questions that might otherwise be very difficult to approach using natural language.
-For instance, I used regular languages
-to measure the capabilities of 
-\textbf{transformers as general instruction followers}
+For instance, I used regular languages to 
+\textbf{measure the capabilities of transformers as general instruction followers}
 in RegSet, my first-author EMNLP 2022 paper 
 and oral presentation~\cite{Finlayson2022WhatMI}. 
 Large, pre-trained LMs can solve some NLP tasks 
 by conditioning their generations on natural language instructions 
 for the task~\cite{mishra2021crosstask, Wei2021FinetunedLM}. 
-However, the complexity of natural language makes it difficult to
+On the other hand, 
+research has shown that neural models consistently to struggle with
+compositional generalization~\cite{Lake2018GeneralizationWS}. 
+This bodes poorly for the instruction following regime
+where the space of task descriptions is both intractably large 
+and highly compositional.
+Moreover, the complexity of natural language makes it difficult to
 predict what types of instructions may be challenging for transformers.
 To solve this predicament, 
 we propose a controllable proxy for studying instruction learning
@@ -98,8 +103,10 @@ On the theoretical side, I am currently developing a framework for
 understanding what transformers can learn from instructions. 
 This builds on prior work~\cite{Merrill2022LogPrecisionTA}
 that achieves an initial lower bound for this problem.
-In my PhD, I hope to derive additional theoretical results that help us
-understand modern neural architectures through formal languages.
+In my PhD, I am would be interested 
+in deriving additional theoretical results 
+that help us understand modern neural architectures 
+through formal languages.
 For instance, recent work~\cite{Wies2022SubTaskDE} 
 proves that subtask decomposition,
 in the style of chain-of-thought reasoning~\cite{Wei2022ChainOT},
@@ -112,16 +119,6 @@ but also provide both a principled way to study transformers
 and bounds on what we can expect them to learn.
 
 \paragraph{Generalization}
-
-My work on RegSet bridges to another area of research I hope to continue in during my PhD: generalization.
-Research has shown that neural models consistently to struggle with
-compositional generalization~\cite{Lake2018GeneralizationWS}. 
-This bodes poorly for models in succeeding on tasks 
-like the instruction following regime I studied with RegSet 
-where the space of task descriptions is both intractably large 
-and highly compositional.
-I am interested in studying and developing models and methods
-that tackle these types of issues.
 
 Some of my past and current work deals with generalization 
 by attempting to develop methods for utilizing pre-trained language models

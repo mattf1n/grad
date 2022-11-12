@@ -4,79 +4,70 @@
 \usepackage{xspace}
 \usepackage[margin=1in]{geometry}
 
+\pagenumbering{gobble}
+
 \newcommand\lila{\textsc{L\={\i}la}\xspace}
 \newcommand\inst{INSTITUTE\xspace}
 
 \begin{document}
 
-I first took an interest in computational linguistics 
-while learning to speak Tagalog. 
-Through the process, I learned a deep appreciation for the language's rich morphology,
-and the immense complexity of human language.
-My enthusiasm for studying language only increased
-as I began as a undergraduate researcher in NLP at Harvard
-under the mentorship of Stuart Shieber and Yonatan Belinkov at Harvard,
-and subsequently began as a pre-doctoral investigator at AI2 
-advised by Peter Clark and Ashish Sabharwal.
-These mentors, as well as my many amazing colleagues at both institutions,
-have inspired me to pursue a PhD in natural language processing (NLP).
+Pre-trained language models (LMs) with billions of parameters 
+are the go-to models for many NLP tasks.
+The sheer scale of their training corpora and parameter counts
+appears to endow them with the ability to compete with, 
+and frequently outperform, task-specific models.
+LMs, however, can often have unexpected failure modes 
+and are notoriously difficult to control.
+The responsible refinement and improvement of these models
+depends upon the development of the necessary tools 
+and frameworks for understanding them.
+While an undergraduate at Harvard and subsequently as a pre-doctoral researcher 
+at AI2, I have developed an approach of \textbf{
+  drawing on fields such as syntax and formal language theory 
+  to develop practical and theoretical frameworks  
+  towards understanding and evaluating language models 
+  as general-purpose NLP systems.
+}
 
-Though some subfields of NLP research 
-have advanced by leaps and bounds in the past few years,
-our understanding of these systems remains unsatisfactory.
-While transformers may get impressive results on, e.g., question answering,
-we do not know what the fundamental limits 
-of what current architectures can compute or approximate,
-or what these models are doing internally.
-Do they learn syntactic rules? 
-Can they generalize to new problems composed of known concepts?
-In my PhD I hope to answer some of these questions
-by \textbf{drawing on fields such as formal language theory and syntax
-to develop practical and theoretical frameworks} 
-for understanding modern NLP methods, 
-especially when it comes to \textbf{understanding compositional generalization} 
-and using \textbf{pre-trained language models as general-purpose systems}.
+\paragraph{Understanding LMs through linguistics}
 
-\paragraph{Understanding LMs through linguistics and formal language theory.}
 Modern NLP has become largely divorced 
 from our understanding of linguistics and cognition in humans.
-I am interested in reconciling our understanding of both.
+Reconciling these two can lend clarity to our understanding of how LMs work.
 As my first foray into this effort, I set out to 
 discover how modern LMs handle syntactic agreement.
 In my first-author ACL 2021 paper and oral presentation~\cite{Finlayson2021CausalAO}
 we intervene on individual neurons in large transformers 
-to observe their causal effect~\cite{Pearl2001DirectAI} on syntactic agreement.
-We find that transformers learn 
+to observe their causal effect on syntactic agreement.
+We find, among other things, that transformers learn 
 two distinct mechanisms for number agreement,
-depending on whether the relevant tokens are adjacent or not.
+and that these mechanisms are distributed in the MLP activations of the network.
+This finding contrasts with earlier research that found that 
+gender bias effects were concentrated in the attention heads of the models~\cite{Vig2020InvestigatingGB}.
 Subsequent research has built on our work 
 in order to analyze other linguistic phenomena 
 such as distributivity~\cite{Ban2022TestingPL},
 and the effect of relative clauses on agreement~\cite{Ravfogel2021CounterfactualIR}.
-During my PhD I hope to continue this line of research 
-by exploring how LMs handle (or fail to handle) 
-other linguistic phenomena. 
-I am particularly interested in linguistic generalization.\footnotemark
-\footnotetext{You say you’re especially interested in linguistic generalization but then you don’t say much about that. You do have a section on generalization in the next page, but presumably that’s something different? It’s also confusing to See a section about that far from the first mention of generalization.}
-For instance, perhaps causal analysis could help us understand
-how transformers handle and acquire new words at inference time
-by intervening on contextualized embeddings within the model.
-Strengthening our understanding of how 
-LMs deal with well-studied linguistic phenomena
-can give insight into what inductive biases these models learn 
-and how to make them better.\footnotemark 
-\footnotetext{A common motivation but hard to achieve in practice. If you have an example or a specific idea it could help.}
-I also believe that insights from computational methods 
-can contribute to the field of linguistics
-by empirically lower-bounding the computational ingredients 
-for producing various phenomena that we see in human speech.\footnotemark
-\footnotetext{This is a confusing sentence. What do you mean?} 
+Studies like these lend important insights into how these models work internally.
+During my PhD, I hope to explore the potential of this style of research 
+to evaluate and improve the linguistic capabilities of neural networks. 
+As an example, I am interested in leveraging the language acquisition literature
+to evaluate and improve LMs' abilities 
+to acquire new words by inferring their meaning from context.
+This might be achieved via a self-supervised pre-training objective 
+that randomly replaces lexical items with new unseen words, 
+forcing the model to learn how to do this effectively.
+Success here would result in LMs that are 
+more robust to linguistic distribution shifts
+and adapt to evolving language.
 
-As noted earlier, I am also excited by projects 
+\paragraph{Understanding LMs through formal language theory}
+
+I am excited by projects 
 that borrow from computation and formal language theory
 to generate insights about LMs.
 This approach makes it possible to answer 
-questions that might otherwise be very difficult to approach.
+questions that might otherwise be very difficult to approach using natural language.
 For instance, I used regular languages
 to measure the capabilities of 
 \textbf{transformers as general instruction followers}
@@ -85,12 +76,14 @@ and oral presentation~\cite{Finlayson2022WhatMI}.
 Large, pre-trained LMs can solve some NLP tasks 
 by conditioning their generations on natural language instructions 
 for the task~\cite{mishra2021crosstask, Wei2021FinetunedLM}. 
-However, the complexity of natural language makes difficult to
-predict what types of instructions may be beyond the grasp of Transformers.
+However, the complexity of natural language makes it difficult to
+predict what types of instructions may be challenging for transformers.
 To solve this predicament, 
 we propose a controllable proxy for studying instruction learning
-by studying LMs ability to learn interpret regular expressions
+by studying LMs ability to learn to interpret regular expressions
 and recognize their strings.
+We then test the effects of well-studied attributes of regular languages,
+such star-freeness, on the 
 Our experiments lead us to a number of intriguing hypotheses 
 about what makes instruction learning hard, 
 including evidence that even large transformers struggle with modular counting 
@@ -107,8 +100,9 @@ for what transformers can learn from instructions,
 or characterize the additional computational power 
 afforded to transformers 
 when they are allowed to generate multiple intermediate tokens 
-before producing an output.\footnotemark
-\footnotetext{See a paper along these lines by Yoav Levine and others, I think on a parity task.}
+before producing an output.\footnote{
+  See a paper along these lines by Yoav Levine and others, I think on a parity task.
+}
 On the empirical side, we can use formal languages to develop benchmarks 
 to isolate and measure progress towards specific abilities 
 in transformers that we hope to see in natural language settings.
@@ -116,10 +110,11 @@ This approach takes advantage of the well studied properties of formal language
 and gives us fine-grained control over the data.
 
 \paragraph{Generalization}
+
 My work on RegSet bridges to another area of research I hope to continue in during my PhD: generalization.
 Research has shown that neural models consistently to struggle with
 compositional generalization~\cite{Lake2018GeneralizationWS}. 
-This bodes poorly for models in succeeding on tasks  
+This bodes poorly for models in succeeding on tasks 
 like the instruction following regime I studied with RegSet 
 where the space of task descriptions is both intractably large 
 and highly compositional.
@@ -143,7 +138,7 @@ Research into adversarial prompts
 is an important step towards to developing 
 secure and ethical general-purpose NLP systems. 
 
-A crucial part of developing general-purpose systems is be able to evaluate them.
+A crucial part of developing general-purpose systems is evaluating them.
 As an example, 
 current evaluation schemes fail to holistically evaluate 
 general-purpose math reasoning skills in LMs
@@ -155,7 +150,7 @@ I introduce the benchmark, \lila~\cite{Mishra2022Lila},
 in my first-author EMNLP 2022 paper
 where we draw together a diverse set over 140K math problems.
 We additionally provide valuable annotations for mathematical reasoning via program synthesis, 
-and show that multi-task learning, 
+and show that multitask learning, 
 combined with augmenting the model with a Python interpreter,
 massively improves LMs ability to do math reasoning 
 with explicit reasoning steps.
@@ -185,7 +180,7 @@ as a way to level the playing field
 for the next generation of researchers.
 
 \paragraph{Fit for \inst} I am specifically interested in joining the CS program at 
-\inst because \ldots Professor NAME's work on \ldots is particularly interesting to me given my interest in \ldots
+\inst because\ldots Professor NAME's work on\ldots is particularly interesting to me given my interest in\ldots
 
 \bibliography{ref}
 \bibliographystyle{unsrt}

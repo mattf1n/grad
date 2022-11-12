@@ -56,7 +56,7 @@ to evaluate and improve LMs' abilities
 to acquire new words by inferring their meaning from context.
 This might be achieved via a self-supervised pre-training objective 
 that randomly replaces lexical items with new unseen words, 
-forcing the model to learn how to do this effectively.
+forcing the model to learn how to generalize effectively.
 Success here would result in LMs that are 
 more robust to linguistic distribution shifts
 and adapt to evolving language.
@@ -80,10 +80,10 @@ However, the complexity of natural language makes it difficult to
 predict what types of instructions may be challenging for transformers.
 To solve this predicament, 
 we propose a controllable proxy for studying instruction learning
-by studying LMs ability to learn to interpret regular expressions
-and recognize their strings.
+by studying LMs' ability to learn to match regular expressions
+and to strings.
 We then test the effects of well-studied attributes of regular languages,
-such star-freeness, on the 
+such star-freeness, on the difficulty as instructions.
 Our experiments lead us to a number of intriguing hypotheses 
 about what makes instruction learning hard, 
 including evidence that even large transformers struggle with modular counting 

@@ -143,21 +143,20 @@ develop secure and ethical general-purpose NLP systems.
 \paragraph{Evaluating general-purpose LMs}
 A crucial part of developing general-purpose systems is evaluating them.
 As an example, 
-current evaluation schemes fail to holistically evaluate 
-general-purpose math reasoning skills in LMs
-because they are far too narrow in scope.
+current evaluation schemes are too narrow in scope to holistically evaluate 
+general-purpose math reasoning skills in LMs.
 Towards improving evaluation in this area, 
 I led a team of 11 researchers in compiling a
-\textbf{comprehensive and diverse natural language math reasoning benchmark.} 
-I introduce the benchmark, \lila~\cite{Mishra2022Lila}, 
-in my first-author EMNLP 2022 paper
-where we draw together a diverse set over 140K math problems.
-We additionally provide valuable annotations for mathematical reasoning via program synthesis, 
-and show that multitask learning, 
-combined with augmenting the model with a Python interpreter,
-massively improves LMs ability to do math reasoning 
-with explicit reasoning steps.
-Our publicly released multitask model, christened Bh\=askara, 
+\textbf{comprehensive and diverse natural language math reasoning benchmark} 
+in \lila~\cite{Mishra2022Lila}, 
+my first-author EMNLP 2022 paper.
+We curate over 140K math problems
+and provide valuable annotations for math reasoning via program synthesis. 
+Our experiments show that multitask learning 
+and augmenting the model with a Python interpreter
+massively improves LM performance 
+while also providing explicit reasoning steps via generated programs.
+Our publicly released multitask model, Bh\=askara, 
 outperforms similarly-sized T5 and GPT-Neo models
 when fine-tuning on new mathematical reasoning tasks.
 \lila shows that LMs 
@@ -167,6 +166,8 @@ and highlights the need for these kinds of unified evaluations for
 aspiring general-purpose math reasoning models.
 During my PhD I hope to continue to develop thoughtful and comprehensive evaluations 
 to measure and promote research into models with greater general utility.
+Additionally, alongside benchmarks and models, 
+I 
 
 \paragraph{Future plans}
 After my PhD and postdoc I hope to become a PI 
@@ -185,8 +186,8 @@ for the next generation of researchers.
 \paragraph{Fit for \inst} I am specifically interested in joining the CS program at 
 \inst because\ldots Professor NAME's work on\ldots is particularly interesting to me given my interest in\ldots
 
-\bibliography{ref}
 \bibliographystyle{unsrt}
+\bibliography{ref}
 
 \end{document}
 

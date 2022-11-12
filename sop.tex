@@ -61,11 +61,11 @@ Success here would result in LMs that are
 more robust to linguistic distribution shifts
 and adapt to evolving language.
 
-\paragraph{Understanding LMs through formal language theory}
+\paragraph{Understanding LMs through formal languages}
 
 I am excited by projects 
-that borrow from computation and formal language theory
-to generate insights about LMs.
+that borrow from formal language theory
+to increase our understanding of LMs.
 This approach makes it possible to answer 
 questions that might otherwise be very difficult to approach using natural language.
 For instance, I used regular languages
@@ -80,34 +80,36 @@ However, the complexity of natural language makes it difficult to
 predict what types of instructions may be challenging for transformers.
 To solve this predicament, 
 we propose a controllable proxy for studying instruction learning
-by studying LMs' ability to learn to match regular expressions
-and to strings.
-We then test the effects of well-studied attributes of regular languages,
-such star-freeness, on the difficulty as instructions.
+by studying LMs' ability to follow instructions in the form of regular expressions.
+We test the effects of attributes of regular languages,
+such starfreeness, on their difficulty as instructions.
 Our experiments lead us to a number of intriguing hypotheses 
 about what makes instruction learning hard, 
 including evidence that even large transformers struggle with modular counting 
 (e.g., determining whether something is even or odd). 
-Subsequent work~\cite{Merrill2022LogPrecisionTA} 
-has built on our formalization 
-to obtain important theoretical results
-by using circuit complexity theory
-to formally characterize transformers ability to execute instructions in the form of a circuit.
-In my PhD, I hope to continue developing both theoretical and empirical frameworks 
-for understanding neural networks through formal languages and computation theory.
-For instance, perhaps we can prove theoretical upper bounds 
-for what transformers can learn from instructions,
-or characterize the additional computational power 
-afforded to transformers 
-when they are allowed to generate multiple intermediate tokens 
-before producing an output.\footnote{
-  See a paper along these lines by Yoav Levine and others, I think on a parity task.
-}
-On the empirical side, we can use formal languages to develop benchmarks 
-to isolate and measure progress towards specific abilities 
-in transformers that we hope to see in natural language settings.
-This approach takes advantage of the well studied properties of formal language
-and gives us fine-grained control over the data.
+By taking advantage of the well studied attributes of formal languages,
+we achieved fine-grained control over our data, leading to findings that
+would have been extremely difficult and expensive to obtain on natural data.
+This approach can be applied more broadly to develop benchmarks 
+that isolate and measure progress towards specific abilities 
+in transformers that we might hope to see in natural language settings.
+
+On the theoretical side, I am currently developing a framework for 
+understanding what transformers can learn from instructions. 
+This builds on prior work~\cite{Merrill2022LogPrecisionTA}
+that achieves an initial lower bound for this problem.
+In my PhD, I hope to derive additional theoretical results that help us
+understand modern neural architectures through formal languages.
+For instance, recent work~\cite{Wies2022SubTaskDE} 
+proves that subtask decomposition,
+in the style of chain-of-thought reasoning~\cite{Wei2022ChainOT},
+enables learning difficult sequence-to-sequence tasks.
+I would be interested in extending this work 
+to characterize the additional computational power 
+afforded to transformers via subtask decomposition.
+These types of results are not only intellectually interesting,
+but also provide both a principled way to study transformers 
+and bounds on what we can expect them to learn.
 
 \paragraph{Generalization}
 

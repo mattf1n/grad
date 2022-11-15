@@ -1,9 +1,18 @@
-@article{Ravfogel2021CounterfactualIR,
-  title={Counterfactual Interventions Reveal the Causal Effect of Relative Clause Representations on Agreement Prediction},
-  author={Shauli Ravfogel and Grusha Prasad and Tal Linzen and Yoav Goldberg},
-  journal={ArXiv},
-  year={2021},
-  volume={abs/2105.06965}
+@inproceedings{ravfogel-etal-2021-counterfactual,
+    title = "Counterfactual Interventions Reveal the Causal Effect of Relative Clause Representations on Agreement Prediction",
+    author = "Ravfogel, Shauli  and
+      Prasad, Grusha  and
+      Linzen, Tal  and
+      Goldberg, Yoav",
+    booktitle = "Proceedings of the 25th Conference on Computational Natural Language Learning",
+    month = nov,
+    year = "2021",
+    address = "Online",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2021.conll-1.15",
+    doi = "10.18653/v1/2021.conll-1.15",
+    pages = "194--209",
+    abstract = "When language models process syntactically complex sentences, do they use their representations of syntax in a manner that is consistent with the grammar of the language? We propose AlterRep, an intervention-based method to address this question. For any linguistic feature of a given sentence, AlterRep generates counterfactual representations by altering how the feature is encoded, while leaving in- tact all other aspects of the original representation. By measuring the change in a model{'}s word prediction behavior when these counterfactual representations are substituted for the original ones, we can draw conclusions about the causal effect of the linguistic feature in question on the model{'}s behavior. We apply this method to study how BERT models of different sizes process relative clauses (RCs). We find that BERT variants use RC boundary information during word prediction in a manner that is consistent with the rules of English grammar; this RC boundary information generalizes to a considerable extent across different RC types, suggesting that BERT represents RCs as an abstract linguistic category.",
 }
 
 @article{Ban2022TestingPL,
@@ -14,32 +23,44 @@
   volume={abs/2209.04761}
 }
 
-@article{Finlayson2021CausalAO,
-  title={Causal Analysis of Syntactic Agreement Mechanisms in Neural Language Models},
-  author={Matthew Finlayson and Aaron Mueller and Stuart M. Shieber and Sebastian Gehrmann and Tal Linzen and Yonatan Belinkov},
-  journal={ArXiv},
-  year={2021},
-  volume={abs/2106.06087}
+@inproceedings{finlayson-etal-2021-causal,
+    title = "Causal Analysis of Syntactic Agreement Mechanisms in Neural Language Models",
+    author = "Finlayson, Matthew  and
+      Mueller, Aaron  and
+      Gehrmann, Sebastian  and
+      Shieber, Stuart  and
+      Linzen, Tal  and
+      Belinkov, Yonatan",
+    booktitle = "Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers)",
+    month = aug,
+    year = "2021",
+    address = "Online",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2021.acl-long.144",
+    doi = "10.18653/v1/2021.acl-long.144",
+    pages = "1828--1843",
+    abstract = "Targeted syntactic evaluations have demonstrated the ability of language models to perform subject-verb agreement given difficult contexts. To elucidate the mechanisms by which the models accomplish this behavior, this study applies causal mediation analysis to pre-trained neural language models. We investigate the magnitude of models{'} preferences for grammatical inflections, as well as whether neurons process subject-verb agreement similarly across sentences with different syntactic structures. We uncover similarities and differences across architectures and model sizes{---}notably, that larger models do not necessarily learn stronger preferences. We also observe two distinct mechanisms for producing subject-verb agreement depending on the syntactic structure of the input sentence. Finally, we find that language models rely on similar sets of neurons when given sentences with similar syntactic structure.",
 }
 
 @article{Finlayson2022WhatMI,
   title={What Makes Instruction Learning Hard? An Investigation and a New Challenge in a Synthetic Environment},
   author={Matthew Finlayson and Kyle Richardson and Ashish Sabharwal and Peter Clark},
-  journal={ArXiv},
+  journal={EMNLP},
   year={2022},
   volume={abs/2204.09148}
 }
 
-@InProceedings{Mishra2022Lila,
-  title={\textsc{L\={\i}la}: A Unified Benchmark for Mathematical Reasoning},
-  author={Matthew Finlayson and Swaroop Mishra and Pan Lu and Leonard Tang and Sean Welleck and Chitta Baral and Tanmay Rajpurohit and Oyvind Tafjord and Ashish Sabharwal and Peter Clark and Ashwin Kalyan},
+@article{Mishra2022LilaAU,
+  title={Lila: A Unified Benchmark for Mathematical Reasoning},
+  author={Swaroop Mishra and Matthew Finlayson and Pan Lu and Leonard Tang and Sean Welleck and Chitta Baral and Tanmay Rajpurohit and Oyvind Tafjord and Ashish Sabharwal and Peter Clark and A. Kalyan},
   journal={EMNLP},
   year={2022},
+  volume={abs/2210.17517}
 }
 
 @article{Merrill2022LogPrecisionTA,
   title={Log-Precision Transformers are Constant-Depth Uniform Threshold Circuits},
-  author={William Cooper Merrill and Ashish Sabharwal},
+  author={William Merrill and Ashish Sabharwal},
   journal={ArXiv},
   year={2022},
   volume={abs/2207.00729}
@@ -101,40 +122,57 @@ annote={Google researchers build FLAN: an instruction following fine-tuned LM},
   volume={abs/2210.02406}
 }
 
-@article{Brown2020LanguageMA,
-  title={Language Models are Few-Shot Learners},
-  author={Tom B. Brown and Benjamin Mann and Nick Ryder and Melanie Subbiah and Jared Kaplan and Prafulla Dhariwal and Arvind Neelakantan and Pranav Shyam and Girish Sastry and Amanda Askell and Sandhini Agarwal and Ariel Herbert-Voss and Gretchen Krueger and T. J. Henighan and Rewon Child and Aditya Ramesh and Daniel M. Ziegler and Jeff Wu and Clemens Winter and Christopher Hesse and Mark Chen and Eric Sigler and Mateusz Litwin and Scott Gray and Benjamin Chess and Jack Clark and Christopher Berner and Sam McCandlish and Alec Radford and Ilya Sutskever and Dario Amodei},
-  journal={ArXiv},
-  year={2020},
-  volume={abs/2005.14165}
+@article{brown2020language,
+  title={Language models are few-shot learners},
+  author={Brown, Tom and Mann, Benjamin and Ryder, Nick and Subbiah, Melanie and Kaplan, Jared D and Dhariwal, Prafulla and Neelakantan, Arvind and Shyam, Pranav and Sastry, Girish and Askell, Amanda and others},
+  journal={Advances in neural information processing systems},
+  volume={33},
+  pages={1877--1901},
+  year={2020}
 }
 
-@article{Min2022RethinkingTR,
-  title={Rethinking the Role of Demonstrations: What Makes In-Context Learning Work?},
-  author={Sewon Min and Xinxi Lyu and Ari Holtzman and Mikel Artetxe and Mike Lewis and Hannaneh Hajishirzi and Luke Zettlemoyer},
-  journal={ArXiv},
-  year={2022},
-  volume={abs/2202.12837}
+@inproceedings{ min2022rethinking,
+    title={ Rethinking the Role of Demonstrations: What makes In-context Learning Work? },
+    author={ Min, Sewon and Lyu, Xinxi and Holtzman, Ari and Artetxe, Mikel and Lewis, Mike and Hajishirzi, Hannaneh and Zettlemoyer, Luke },
+    booktitle={ EMNLP },
+    year={ 2022 }
 }
 
-@article{Gao2021MakingPL,
-  title={Making Pre-trained Language Models Better Few-shot Learners},
-  author={Tianyu Gao and Adam Fisch and Danqi Chen},
-  journal={ArXiv},
-  year={2021},
-  volume={abs/2012.15723},
-  annote={},
-  url={https://aclanthology.org/2021.acl-long.295/}
+
+@inproceedings{gao-etal-2021-making,
+    title = "Making Pre-trained Language Models Better Few-shot Learners",
+    author = "Gao, Tianyu  and
+      Fisch, Adam  and
+      Chen, Danqi",
+    booktitle = "Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers)",
+    month = aug,
+    year = "2021",
+    address = "Online",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2021.acl-long.295",
+    doi = "10.18653/v1/2021.acl-long.295",
+    pages = "3816--3830",
+    abstract = "The recent GPT-3 model (Brown et al., 2020) achieves remarkable few-shot performance solely by leveraging a natural-language prompt and a few task demonstrations as input context. Inspired by their findings, we study few-shot learning in a more practical scenario, where we use smaller language models for which fine-tuning is computationally efficient. We present LM-BFF{---}better few-shot fine-tuning of language models{---}a suite of simple and complementary techniques for fine-tuning language models on a small number of annotated examples. Our approach includes (1) prompt-based fine-tuning together with a novel pipeline for automating prompt generation; and (2) a refined strategy for dynamically and selectively incorporating demonstrations into each context. Finally, we present a systematic evaluation for analyzing few-shot performance on a range of NLP tasks, including classification and regression. Our experiments demonstrate that our methods combine to dramatically outperform standard fine-tuning procedures in this low resource setting, achieving up to 30{\%} absolute improvement, and 11{\%} on average across all tasks. Our approach makes minimal assumptions on task resources and domain expertise, and hence constitutes a strong task-agnostic method for few-shot learning.",
 }
 https://aclanthology.org/2021.acl-long.295.pdf
 ~/papers/Gao2021MakingPL.pdf
 
-@article{Shin2020ElicitingKF,
-  title={Eliciting Knowledge from Language Models Using Automatically Generated Prompts},
-  author={Taylor Shin and Yasaman Razeghi and Robert L Logan IV and Eric Wallace and Sameer Singh},
-  journal={ArXiv},
-  year={2020},
-  volume={abs/2010.15980}
+@inproceedings{shin-etal-2020-autoprompt,
+    title = "{A}uto{P}rompt: {E}liciting {K}nowledge from {L}anguage {M}odels with {A}utomatically {G}enerated {P}rompts",
+    author = "Shin, Taylor  and
+      Razeghi, Yasaman  and
+      Logan IV, Robert L.  and
+      Wallace, Eric  and
+      Singh, Sameer",
+    booktitle = "Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP)",
+    month = nov,
+    year = "2020",
+    address = "Online",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2020.emnlp-main.346",
+    doi = "10.18653/v1/2020.emnlp-main.346",
+    pages = "4222--4235",
+    abstract = "The remarkable success of pretrained language models has motivated the study of what kinds of knowledge these models learn during pretraining. Reformulating tasks as fill-in-the-blanks problems (e.g., cloze tests) is a natural approach for gauging such knowledge, however, its usage is limited by the manual effort and guesswork required to write suitable prompts. To address this, we develop AutoPrompt, an automated method to create prompts for a diverse set of tasks, based on a gradient-guided search. Using AutoPrompt, we show that masked language models (MLMs) have an inherent capability to perform sentiment analysis and natural language inference without additional parameters or finetuning, sometimes achieving performance on par with recent state-of-the-art supervised models. We also show that our prompts elicit more accurate factual knowledge from MLMs than the manually created prompts on the LAMA benchmark, and that MLMs can be used as relation extractors more effectively than supervised relation extraction models. These results demonstrate that automatically generated prompts are a viable parameter-free alternative to existing probing methods, and as pretrained LMs become more sophisticated and capable, potentially a replacement for finetuning.",
 }
 ~/papers/AutoPrompt.pdf
 
@@ -155,20 +193,36 @@ https://www.semanticscholar.org/paper/Universal-Adversarial-Triggers-for-Attacki
   urldate={October 17, 2022},
 }
 
-@article{Xie2022AnEO,
-  title={An Explanation of In-context Learning as Implicit Bayesian Inference},
-  author={Sang Michael Xie and Aditi Raghunathan and Percy Liang and Tengyu Ma},
-  journal={ArXiv},
-  year={2022},
-  volume={abs/2111.02080}
+@inproceedings{xie2022an,
+title={An Explanation of In-context Learning as Implicit Bayesian Inference},
+author={Sang Michael Xie and Aditi Raghunathan and Percy Liang and Tengyu Ma},
+booktitle={International Conference on Learning Representations},
+year={2022},
+url={https://openreview.net/forum?id=RdJVFCHjUMI}
 }
 
-@article{Khashabi2022PromptWT,
-  title={Prompt Waywardness: The Curious Case of Discretized Interpretation of Continuous Prompts},
-  author={Daniel Khashabi and Shan Lyu and Sewon Min and Lianhui Qin and Kyle Richardson and Sameer Singh and Sean Welleck and Hannaneh Hajishirzi and Tushar Khot and Ashish Sabharwal and Yejin Choi},
-  journal={ArXiv},
-  year={2022},
-  volume={abs/2112.08348}
+@inproceedings{khashabi-etal-2022-prompt,
+    title = "Prompt Waywardness: The Curious Case of Discretized Interpretation of Continuous Prompts",
+    author = "Khashabi, Daniel  and
+      Lyu, Xinxi  and
+      Min, Sewon  and
+      Qin, Lianhui  and
+      Richardson, Kyle  and
+      Welleck, Sean  and
+      Hajishirzi, Hannaneh  and
+      Khot, Tushar  and
+      Sabharwal, Ashish  and
+      Singh, Sameer  and
+      Choi, Yejin",
+    booktitle = "Proceedings of the 2022 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies",
+    month = jul,
+    year = "2022",
+    address = "Seattle, United States",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2022.naacl-main.266",
+    doi = "10.18653/v1/2022.naacl-main.266",
+    pages = "3631--3643",
+    abstract = "Fine-tuning continuous prompts for target tasks has recently emerged as a compact alternative to full model fine-tuning. Motivated by these promising results, we investigate the feasibility of extracting a discrete (textual) interpretation of continuous prompts that is faithful to the problem they solve. In practice, we observe a {``}wayward{''} behavior between the task solved by continuous prompts and their nearest neighbor discrete projections: We can find continuous prompts that solve a task while being projected to an arbitrary text (e.g., definition of a different or even a contradictory task), while being within a very small (2{\%}) margin of the best continuous prompt of the same size for the task. We provide intuitions behind this odd and surprising behavior, as well as extensive empirical analyses quantifying the effect of various parameters. For instance, for larger model sizes we observe higher waywardness, i.e, we can find prompts that more closely map to any arbitrary text with a smaller drop in accuracy. These findings have important implications relating to the difficulty of faithfully interpreting continuous prompts and their generalization across models and tasks, providing guidance for future progress in prompting language models.",
 }
 
 @article{Fedus2021SwitchTS,

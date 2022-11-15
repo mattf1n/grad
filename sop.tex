@@ -19,40 +19,40 @@ and frequently outperform, task-specific models.
 LMs, however, can often have unexpected failure modes 
 and are notoriously difficult to control.
 The responsible refinement and improvement of these models
-depends upon the development of the necessary tools 
+depends upon the creation of the necessary tools 
 and frameworks for understanding them.
 While an undergraduate at Harvard and subsequently as a pre-doctoral researcher 
-at AI2, I have developed an approach of \textbf{
-  drawing on fields such as syntax and formal language theory 
-  to develop practical and theoretical frameworks  
-  towards understanding and evaluating language models 
-  as general-purpose NLP systems.
-}
+at AI2, I have adopted an approach of 
+\textbf{drawing on linguistics} such as syntax and formal language theory 
+to develop practical and theoretical frameworks  
+towards \textbf{understanding and evaluating} language models 
+as \textbf{general-purpose NLP systems.}
 
-\paragraph{Understanding LMs through linguistics}
+\paragraph{Understanding and improving LMs through linguistics}
 
 Modern NLP has become largely divorced 
 from our understanding of linguistics and cognition in humans.
 Reconciling these two can lend clarity to our understanding of how LMs work.
 As my first foray into this effort, I set out to 
 discover how modern LMs handle syntactic agreement.
-In my first-author ACL 2021 paper and oral presentation~\cite{Finlayson2021CausalAO}
+In my first-author ACL 2021 paper~\cite{Finlayson2021CausalAO}
 we intervene on individual neurons in large transformers 
 to observe their causal effect on syntactic agreement.
 We find, among other things, that transformers learn 
 two distinct mechanisms for number agreement,
-and that these mechanisms are distributed in the MLP activations of the network.
-This finding contrasts with earlier interpretability research that found that 
-gender bias effects were concentrated 
-in the attention heads of the models~\cite{Vig2020InvestigatingGB}.
+and that these mechanisms are distributed in the activations of the network, 
+rather than concentrated in any single model component,
+as was found with gender bias~\cite{Vig2020InvestigatingGB}.
+These findings constitute a step forward in being able to understand and interpret
+how LMs mimic syntactic behavior, shedding light into the black box model.
 Subsequent research has built on our work 
 in order to interpret other linguistic phenomena 
 such as distributivity~\cite{Ban2022TestingPL}.
 % and the effect of relative clauses on agreement~\cite{Ravfogel2021CounterfactualIR}.
-This line of interpretability research is important 
-for building our understanding of models' internal workings.
+% This line of interpretability research is important 
+% for building our understanding of models' internal workings.
 During my PhD, I hope to explore the potential of this style of research
-to evaluate and improve the linguistic capabilities of neural networks. 
+to evaluate and improve the linguistic capabilities of LMs. 
 As an example, I am interested in leveraging the language acquisition literature
 to evaluate and improve LMs' abilities 
 to acquire new words by inferring their meaning from context.
@@ -72,13 +72,12 @@ This approach makes it possible to answer
 questions that might otherwise be very difficult to approach using natural language.
 For instance, I used regular languages to 
 \textbf{measure the capabilities of transformers as general instruction followers}
-in RegSet, my first-author EMNLP 2022 paper 
-and oral presentation~\cite{Finlayson2022WhatMI}. 
+in RegSet, my first-author EMNLP 2022 paper~\cite{Finlayson2022WhatMI}. 
 Large, pre-trained LMs can solve some NLP tasks 
 by conditioning their generations on natural language instructions 
 for the task~\cite{mishra2021crosstask, Wei2021FinetunedLM}. 
 On the other hand, 
-research has shown that neural models consistently to struggle with
+research has shown that neural models consistently struggle with
 compositional generalization~\cite{Lake2018GeneralizationWS}. 
 This bodes poorly for the instruction following regime
 where the space of task descriptions is both intractably large 
@@ -101,24 +100,29 @@ This approach can be applied more broadly to develop benchmarks
 that isolate and measure progress towards specific abilities 
 in transformers that we might hope to see in natural language settings.
 
-On the theoretical side, I am currently developing a framework for 
-understanding what transformers can learn from instructions. 
-This builds on prior work~\cite{Merrill2022LogPrecisionTA}
-that achieves an initial lower bound for this problem.
-In my PhD, I am interested 
-in deriving additional theoretical results 
+I am interested 
+in deriving theoretical results 
 that help us understand modern neural architectures 
 through formal languages.
-For instance, recent work~\cite{Wies2022SubTaskDE} 
-proves that subtask decomposition,
-in the style of chain-of-thought reasoning~\cite{Wei2022ChainOT},
-enables learning difficult sequence-to-sequence tasks.
-I would be interested in extending this work 
-to characterize the additional computational power 
-afforded to transformers via subtask decomposition.
-These types of results are not only intellectually interesting,
-but also provide both a principled way to study transformers 
+I am currently developing a framework for 
+understanding what transformers can learn from instructions. 
+In particular, I hope to show which families of formal languages 
+are provably (un)learnable by transformers 
+in the instruction learning setting.
+This builds on prior work~\cite{Merrill2022LogPrecisionTA},
+and provides both a principled way to study transformers 
 and bounds on what we can expect them to learn.
+Another useful direction could be to extend
+recent work~\cite{Wies2022SubTaskDE} which 
+proves that subtask decomposition
+via step-by-step reasoning
+enables learning difficult sequence-to-sequence tasks.
+Extending this work 
+to characterize the additional computational power 
+afforded to transformers via subtask decomposition
+would be both intellectually interesting
+and relevant towards understanding why step-by-step reasoning 
+has emerged as such an effective strategy for prompting LMs.
 
 \paragraph{Methods and risks for general-purpose LMs}
 
@@ -126,8 +130,8 @@ Some of my past and current work
 deals with methods for utilizing pre-trained language models
 as general-purpose solvers and the potential risks associated with this paradigm.
 In a preprint currently under submission to ICLR 2023~\cite{Khot2022DecomposedPA},
-I develop a modular prompting method for recursively prompting large LMs 
-in order to vastly improve length generalization 
+I implement a modular prompting method for recursively prompting large LMs 
+in order to vastly improve generalization to longer sequence lengths
 compared to few-shot and step-by-step reasoning style prompting.
 In my current work, I am engineering a
 decoding procedure for using frozen LMs as black boxes
@@ -140,10 +144,10 @@ These prompts could be generated by simultaneously
 decoding for fluency for one task and accuracy on another.
 I hope to continue research into adversarial attacks such as this 
 during my PhD in order to
-develop secure and ethical general-purpose NLP systems. 
+further the development of secure and ethical general-purpose NLP systems. 
 
 \paragraph{Evaluating general-purpose LMs}
-Proper evaluation is critical to developing general-purpose NLP systems.
+Proper evaluation is critical to advancing general-purpose NLP systems.
 Current evaluation schemes are insufficient to handle
 the latest wave of general-purpose models. 
 For instance, existing datasets for are too narrow in scope 
@@ -166,9 +170,9 @@ in their current form
 are woefully deficient when it comes to math reasoning,
 and highlights the need for these kinds of unified evaluations for 
 aspiring general-purpose math reasoning models.
-During my PhD I hope to continue to develop thoughtful and comprehensive evaluations 
+During my PhD I plan to continue to create thoughtful and comprehensive evaluations 
 to measure and promote research into models with greater general utility.
-In particular, I am interested in aligning evaluation metrics
+In particular, I hope to work towards align evaluation metrics
 with human and expert human judgements on open-ended tasks. 
 From my work on \lila, 
 I experienced how evaluation becomes increasingly difficult 
@@ -183,7 +187,7 @@ and realign automatic evaluation with human judgement.
 \paragraph{Future plans}
 After my PhD and postdoc I hope to become a PI 
 at an institution where I can achieve autonomy in choosing my research directions
-while also pursuing my passion for mentorship teaching.
+while also pursuing my passion for mentorship and teaching.
 Ideally this means a professorship at a research university.
 I value autonomy in research because I work best 
 when I can focus my energy on projects 

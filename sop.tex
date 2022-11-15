@@ -42,19 +42,21 @@ to observe their causal effect on syntactic agreement.
 We find, among other things, that transformers learn 
 two distinct mechanisms for number agreement,
 and that these mechanisms are distributed in the MLP activations of the network.
-This finding contrasts with earlier research that found that 
-gender bias effects were concentrated in the attention heads of the models~\cite{Vig2020InvestigatingGB}.
+This finding contrasts with earlier interpretability research that found that 
+gender bias effects were concentrated 
+in the attention heads of the models~\cite{Vig2020InvestigatingGB}.
 Subsequent research has built on our work 
-in order to analyze other linguistic phenomena 
-such as distributivity~\cite{Ban2022TestingPL},
-and the effect of relative clauses on agreement~\cite{Ravfogel2021CounterfactualIR}.
-Studies like these lend important insights into how these models work internally.
-During my PhD, I hope to explore the potential of this style of research 
+in order to interpret other linguistic phenomena 
+such as distributivity~\cite{Ban2022TestingPL}.
+% and the effect of relative clauses on agreement~\cite{Ravfogel2021CounterfactualIR}.
+This line of interpretability research is important 
+for building our understanding of models' internal workings.
+During my PhD, I hope to explore the potential of this style of research
 to evaluate and improve the linguistic capabilities of neural networks. 
 As an example, I am interested in leveraging the language acquisition literature
 to evaluate and improve LMs' abilities 
 to acquire new words by inferring their meaning from context.
-This might be achieved via a self-supervised pre-training objective 
+Improving this ability might be achieved via a self-supervised pre-training objective 
 that randomly replaces lexical items with new unseen words, 
 forcing the model to learn how to generalize effectively.
 Success here would result in LMs that are 
@@ -141,15 +143,15 @@ during my PhD in order to
 develop secure and ethical general-purpose NLP systems. 
 
 \paragraph{Evaluating general-purpose LMs}
-A crucial part of developing general-purpose systems is evaluating them.
-As an example, 
-current evaluation schemes are too narrow in scope to holistically evaluate 
-general-purpose math reasoning skills in LMs.
-Towards improving evaluation in this area, 
+Proper evaluation is critical to developing general-purpose NLP systems.
+Current evaluation schemes are insufficient to handle
+the latest wave of general-purpose models. 
+For instance, existing datasets for are too narrow in scope 
+to holistically evaluate general-purpose math reasoning skills in LMs.
+To address this,
 I led a team of 11 researchers in compiling a
 \textbf{comprehensive and diverse natural language math reasoning benchmark} 
-in \lila~\cite{Mishra2022Lila}, 
-my first-author EMNLP 2022 paper.
+called \lila~\cite{Mishra2022Lila} (first-author paper, EMNLP 2022).
 We curate over 140K math problems
 and provide valuable annotations for math reasoning via program synthesis. 
 Our experiments show that multitask learning 
@@ -166,6 +168,17 @@ and highlights the need for these kinds of unified evaluations for
 aspiring general-purpose math reasoning models.
 During my PhD I hope to continue to develop thoughtful and comprehensive evaluations 
 to measure and promote research into models with greater general utility.
+In particular, I am interested in aligning evaluation metrics
+with human and expert human judgements on open-ended tasks. 
+From my work on \lila, 
+I experienced how evaluation becomes increasingly difficult 
+as tasks become more open-ended.
+F1, exact match, and even more sophisticated metrics like Rouge,
+still leave much to be desired.
+I am interested in developing \emph{learned} metrics, 
+i.e., using a model to assign scores,
+that can capture the subtle nuances required to evaluate open-ended tasks,
+and realign automatic evaluation with human judgement.
 
 \paragraph{Future plans}
 After my PhD and postdoc I hope to become a PI 

@@ -8,12 +8,23 @@ Application materials
 
 Note: I do not think I will apply to all of these places, but these are the ones on the table currently.
 
-| Program                                                                        | Deadline |
-|--------------------------------------------------------------------------------|----------|
-| ELLIS                                                                          | Nov 15   |
-| Cornell, Princeton                                                             | Dec 1    |
-| Stanford                                                                       | Dec 6    |
-| Berkeley                                                                       | Dec 8    |
-| NYU, CMU                                                                       | Dec 12   |
-| MIT, UW, JHU, USC, UC Irvine, UCLA, UofU, UPenn, Brown, Yale, UT Austin, GTech, Zurich | Dec 15   |
-| UCSD                                                                           | Dec 21   |
+| Program                                                                                       | App deadline | Letter deadline |
+|-----------------------------------------------------------------------------------------------|--------------|-----------------|
+| ELLIS                                                                                         | Nov 15       | Nov 25          |
+| Edinburgh                                                                                     | Nov 25       |                 |
+| Cornell, Princeton                                                                            | Dec 1        |                 |
+| Stanford                                                                                      | Dec 6        |
+| Berkeley                                                                                      | Dec 8        |
+| NYU, CMU                                                                                      | Dec 12       |
+| UNC                                                                                           | Dec 14       |
+| MIT, UW, JHU, USC, UC Irvine, UCLA, UofU, UPenn, Brown, Yale, UT Austin, GTech, UMass Amherst | Dec 15       |
+| UCSD                                                                                          | Dec 21       |
+
+## Program-specific info
+
+| Program   | Essays beyond SoP and wordcount                        | People                    |
+|-----------|--------------------------------------------------------|---------------------------|
+| ELLIS     | None                                                   | Belinkov, Ponti, Koller   |
+| Edinburgh | Motivations 500, background 500, research proposal 500 | Ponti, Pasquale Minervini |
+| Cornell   | PHS 1000                                               |                           |
+| Princeton |                                                        |                           |

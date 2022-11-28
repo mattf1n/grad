@@ -12,28 +12,32 @@
 \begin{document}
 
 Pre-trained language models (LMs) with billions of parameters 
-are the go-to models for many NLP tasks.
-The sheer scale of their training corpora and parameter counts
-appears to endow them with the ability to compete with, 
-and frequently outperform, task-specific models.
-LMs, however, can often have unexpected failure modes 
+have proven their versatility 
+as general-purpose NLP systems. 
+By general-purpose, I mean that a single, frozen LM can be used 
+in lieu of a task-specific architecture or fine-tuned model 
+for a multitude of tasks.
+However, these models have unexpected failure modes 
 and are notoriously difficult to control.
-The responsible refinement and improvement of these models
-depends upon the creation of the necessary tools 
-and frameworks for understanding them.
-While an undergraduate at Harvard (advised by Stuart Shieber and Yonatan Belinkov) and subsequently as a pre-doctoral researcher 
-at AI2 (advised by Peter Clark and Ashish Sabharwal), 
-I have adopted an approach of 
-drawing on fields such as syntax and formal language theory 
+Responsibly developing these models
+requires proper tools for understanding them.
+As an undergraduate computational linguistics researcher at Harvard 
+(advised by Stuart Shieber and Yonatan Belinkov)
+and subsequently as a pre-doctoral researcher at AI2 
+(advised by Peter Clark and Ashish Sabharwal)
+I have cultivated a multi-perspective approach to understanding and using LMs.
+I aim to build on this work during my PhD
+by drawing on fields such as syntax and formal language theory 
 to create practical and theoretical frameworks  
-towards \textbf{understanding, evaluating, and safely developing} language models 
+towards \textbf{understanding, evaluating, and safely using} language models 
 as \textbf{general-purpose NLP systems.}
 
 \paragraph{Understanding and improving LMs through linguistics}
 
 Modern NLP has become largely divorced 
 from our understanding of linguistics and cognition in humans.
-Reconciling these two can lend clarity to our understanding of how LMs work.
+Reconciling these two can lend clarity to our understanding of how LMs work, 
+which in turn is the first step towards improving them.
 As my first foray into this effort, I set out to 
 discover how modern LMs handle syntactic agreement.
 In my first-author ACL 2021 paper~\cite{finlayson-etal-2021-causal}
@@ -41,24 +45,26 @@ we intervene on individual neurons in large transformers
 to observe their causal effect on syntactic agreement.
 We find, among other things, that transformers learn 
 two distinct mechanisms for number agreement,
-and that these mechanisms are distributed in the activations of the network, 
+and that these mechanisms are distributed 
+in the activations of the network, 
 rather than concentrated in any single model component,
 as was found with gender bias~\cite{Vig2020InvestigatingGB}.
-These findings constitute a step forward in being able to understand and interpret
-how LMs mimic syntactic behavior, shedding light into the black box model.
+These findings constitute a step forward 
+in being able to understand and interpret
+how LMs mimic syntactic behavior,
+shedding light into the black box model.
 Subsequent research has built on our work 
 in order to interpret other linguistic phenomena 
 such as distributivity~\cite{Ban2022TestingPL}.
-% and the effect of relative clauses on agreement~\cite{Ravfogel2021CounterfactualIR}.
-% This line of interpretability research is important 
-% for building our understanding of models' internal workings.
 In future research, I hope to explore 
 the potential of linguistically informed approaches
 to evaluate and improve the capabilities of LMs. 
-As an example, I am interested in leveraging the language acquisition literature
+As an example, I am interested in leveraging 
+the language acquisition literature
 to evaluate and improve LMs' abilities 
 to acquire new words by inferring their meaning from context.
-Improving this ability might be achieved via a self-supervised pre-training objective 
+Improving this ability might be achieved 
+via a self-supervised pre-training objective 
 that randomly replaces lexical items with new unseen words, 
 forcing the model to learn how to generalize effectively.
 Success here would result in LMs that are 
@@ -84,13 +90,13 @@ compositional generalization~\cite{Lake2018GeneralizationWS}.
 This bodes poorly for the instruction following regime
 where the space of task descriptions is both intractably large 
 and highly compositional.
-Moreover, the complexity of natural language makes it difficult to
+Moreover, the fuzziness of natural language makes it difficult to
 predict what types of instructions may be challenging for transformers.
 To solve this predicament, 
 we propose a controllable proxy for studying instruction learning
 by studying LMs' ability to follow instructions in the form of regular expressions.
 We test the effects of attributes of regular languages,
-such starfreeness, on their difficulty as instructions.
+such as starfreeness~\cite{Salomaa1981JewelsOF}, on their difficulty as instructions.
 Our experiments lead us to a number of intriguing hypotheses 
 about what makes instruction learning hard, 
 including evidence that even large transformers struggle with modular counting 
@@ -128,8 +134,7 @@ enables learning difficult sequence-to-sequence tasks.
 Extending this work
 by characterizing the additional computational power 
 these techniques afford transformers
-would be both intellectually interesting
-and relevant towards understanding why step-by-step reasoning 
+would be help explain why step-by-step reasoning 
 has emerged as such an effective strategy for prompting LMs.
 
 \paragraph{Evaluating and mitigating risks from general-purpose LMs}
@@ -158,21 +163,10 @@ and highlights the need for unified evaluations for
 aspiring general-purpose reasoning models.
 I plan to continue to create thoughtful and comprehensive evaluations 
 to measure and promote research into models with greater general utility.
-In particular, I hope to align evaluation metrics
-with human judgements on open-ended tasks. 
-From my work on \lila, 
-I experienced how evaluation becomes increasingly difficult 
-as tasks become more open-ended.
-F1, exact match, and even more sophisticated metrics like Rouge,
-still leave much to be desired.
-I am interested in building \emph{learned} metrics, 
-i.e., using a model to assign scores,
-that can capture the subtle nuances required to evaluate open-ended tasks,
-and realign automatic evaluation with human judgement.
 
 During my PhD I also hope to expand research on the risks associated 
 with general-purpose NLP systems and how to mitigate them.
-For instance, I am currently engineering a decoding procedure 
+For instance, I am currently developing a decoding procedure 
 for using frozen LMs as black boxes
 to generate their own task-specific prompts.
 I hope to apply this technique
@@ -182,22 +176,8 @@ but cause the model to exhibit another.
 These prompts could be generated by simultaneously 
 decoding for fluency for one task and accuracy on another.
 Exposing these types of vulnerabilities
-enables the research community to better develop
+enables the research community to better achieve
 secure and ethical general-purpose NLP systems. 
-
-\paragraph{Future plans}
-After my PhD and postdoc I hope to become a PI 
-at an institution where I can achieve autonomy in choosing my research directions
-while also pursuing my passion for mentorship and teaching.
-Ideally this means a professorship at a research university.
-I value autonomy in research because I work best 
-when I can focus my energy on projects 
-that are intellectually interesting to me.
-I have also especially become aware of the importance of mentorship 
-throughout my undergrad and time at AI2.
-I am passionate about promoting access to mentorship 
-as a way to level the playing field 
-for the next generation of researchers.
 
 \paragraph{Fit for \inst} I am specifically interested in joining the CS program at 
 \inst because\ldots Professor NAME's work on\ldots is particularly interesting to me given my interest in\ldots

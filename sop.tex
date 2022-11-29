@@ -34,7 +34,7 @@ as \textbf{general-purpose NLP systems.}
 
 \paragraph{Understanding and improving LMs through linguistics}
 
-Modern NLP has become largely divorced 
+Modern NLP is largely divorced 
 from our understanding of linguistics and cognition in humans.
 Reconciling these two can lend clarity to our understanding of how LMs work, 
 which in turn is the first step towards improving them.
@@ -50,7 +50,7 @@ in the activations of the network,
 rather than concentrated in any single model component,
 as was found with gender bias~\cite{Vig2020InvestigatingGB}.
 These findings constitute a step forward 
-in being able to understand and interpret
+in understanding and interpreting
 how LMs mimic syntactic behavior,
 shedding light into the black box model.
 Subsequent research has built on our work 
@@ -108,17 +108,17 @@ This approach can be applied more broadly to develop benchmarks
 that isolate and measure progress towards specific abilities 
 in transformers that we might hope to see in natural language settings.
 
-Formal language theory can also be used to derive theoretical results 
-that help us understand modern neural architectures. 
+We can also use formal language theory to derive theoretical results 
+that help us understand neural LMs. 
 I am currently developing a framework for 
 understanding what transformers can learn from instructions. 
 In particular, I hope to show \textbf{which formal language families 
 are provably learnable by transformers 
 via instructions.}
 This builds on prior work~\cite{Merrill2022LogPrecisionTA},
-and provides both a principled way to study transformers 
+and provides both a principled way to study transformers,
 and bounds on what we can expect them to learn.
-Another useful direction could be to study
+In the future, I would like to study
 \textbf{the theoretical implications of sub-task decomposition.}
 I have previously worked on empirical studies in this area:
 in a preprint currently under submission 
@@ -127,42 +127,40 @@ I implement a modular method for recursively prompting large LMs
 which vastly improves generalization to longer sequence lengths 
 for certain types of tasks 
 when compared to other step-by-step reasoning styles.
+While exciting, it is not clear \emph{why} these methods are effective.
 Recent work~\cite{Wies2022SubTaskDE} 
 proves that subtask decomposition
 via step-by-step reasoning
-enables learning difficult sequence-to-sequence tasks.
+enables learning difficult tasks via fine-tuning.
 Extending this work
 by characterizing the additional computational power 
-these techniques afford transformers
-would be help explain why step-by-step reasoning 
-has emerged as such an effective strategy for prompting LMs.
+intermediate reasoning affords transformers
+could explain why this prompting strategy has proven so successful.
 
 \paragraph{Evaluating and mitigating risks from general-purpose LMs}
-Proper evaluation is critical to advancing general-purpose NLP systems,
-and current methods are often insufficient for this purpose.
+
+Comprehensive evaluation is critical to advancing general-purpose NLP systems,
+and existing benchmarks are often insufficient.
 For instance, existing datasets for are too narrow in scope 
-to holistically evaluate general-purpose math reasoning skills in LMs.
-To address this,
-I led a team of 11 researchers in compiling a
-comprehensive and diverse natural language 
+to holistically evaluate math reasoning skills in LMs.
+To address this, I led a team of 11 researchers 
+in compiling a diverse natural language 
 \textbf{math reasoning benchmark} 
 called \lila~\cite{Mishra2022LilaAU} (first-author paper, EMNLP 2022).
 We curate over 140K math problems
-and provide valuable annotations for reasoning via program synthesis. 
+and provide annotations for reasoning via program synthesis, 
 Our experiments show that multitask learning 
-and augmenting the model with a Python interpreter
-massively improves LM performance 
-while also providing explicit reasoning steps in the form of generated programs.
+and augmenting with a Python interpreter
+massively improves LM performance. 
 Our multitask model, Bh\=askara, 
 outperforms similarly-sized models
 when fine-tuning on new math reasoning tasks.
 Despite our modeling contributions, \lila also shows that LMs 
-in their current form 
-are woefully deficient when it comes to math reasoning,
-and highlights the need for unified evaluations for 
+are woefully deficient at math reasoning,
+and demonstrates the need for unified evaluations for 
 aspiring general-purpose reasoning models.
-I plan to continue to create thoughtful and comprehensive evaluations 
-to measure and promote research into models with greater general utility.
+In my PhD I plan to continue to create thoughtful and comprehensive evaluations 
+to measure progress towards general-purpose models.
 
 During my PhD I also hope to expand research on the risks associated 
 with general-purpose NLP systems and how to mitigate them.

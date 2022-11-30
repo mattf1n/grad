@@ -1,32 +1,35 @@
 \documentclass[11pt]{article}
 
-\usepackage{times}
+\usepackage{palatino}
 \usepackage{xspace}
 \usepackage[margin=1in]{geometry}
 
 \pagenumbering{gobble}
 
 \newcommand\lila{\textsc{L\={\i}la}\xspace}
-\newcommand\inst{INSTITUTE\xspace}
+\newcommand\inst{Cornell\xspace}
 
 \begin{document}
 
-Pre-trained language models (LMs) with billions of parameters 
-have proven their versatility 
-as general-purpose NLP systems. 
-By general-purpose, I mean that a single, frozen LM can be used 
-in lieu of a task-specific architecture or fine-tuned model 
-for a multitude of tasks.
-However, these models have unexpected failure modes 
+Pretrained language models (LMs) with billions of parameters 
+without fine-tuning
+increasingly function as general-purpose NLP systems, 
+meaning that they can often
+outperform task-specific models. 
+However, they can have unexpected failure modes 
 and are notoriously difficult to control.
-Responsibly developing these models
-requires proper tools for understanding them.
+Responsibly developing general-purpose LMs
+requires creating tools for understanding them.
+For instance, understanding how LMs learn from context
+can guide the development of better prompting techniques,
+and understanding LMs' susceptibility to adversarial attacks
+can the spur progress in creating safe LMs.
 As an undergraduate computational linguistics researcher at Harvard 
 (advised by Stuart Shieber and Yonatan Belinkov)
 and subsequently as a pre-doctoral researcher at AI2 
 (advised by Peter Clark and Ashish Sabharwal)
 I have cultivated a multi-perspective approach to understanding and using LMs.
-I aim to build on this work during my PhD
+I aim to build on this during my PhD
 by drawing on fields such as syntax and formal language theory 
 to create practical and theoretical frameworks  
 towards \textbf{understanding, evaluating, and safely using} language models 
@@ -35,150 +38,142 @@ as \textbf{general-purpose NLP systems.}
 \paragraph{Understanding and improving LMs through linguistics}
 
 Modern NLP is largely divorced 
-from our understanding of linguistics and cognition in humans.
-Reconciling these two can lend clarity to our understanding of how LMs work, 
-which in turn is the first step towards improving them.
-As my first foray into this effort, I set out to 
+from our understanding of linguistics.
+Reconciling these can lend clarity to how LMs work, 
+which is a first step towards improving them.
+As my first foray into research, I set out to 
 discover how modern LMs handle syntactic agreement.
 In my first-author ACL 2021 paper~\cite{finlayson-etal-2021-causal}
-we intervene on individual neurons in large transformers 
-to observe their causal effect on syntactic agreement.
+we intervene on neurons in transformers 
+to observe their causal effect.
 We find, among other things, that transformers learn 
 two distinct mechanisms for number agreement,
 and that these mechanisms are distributed 
 in the activations of the network, 
-rather than concentrated in any single model component,
-as was found with gender bias~\cite{Vig2020InvestigatingGB}.
-These findings constitute a step forward 
-in understanding and interpreting
+rather than concentrated in any single model component.
+% as was found with gender bias~\cite{Vig2020InvestigatingGB}.
+These findings elucidate
 how LMs mimic syntactic behavior,
-shedding light into the black box model.
-Subsequent research has built on our work 
-in order to interpret other linguistic phenomena 
+and subsequent research has built on our work 
+to interpret other linguistic phenomena 
 such as distributivity~\cite{Ban2022TestingPL}.
 In future research, I hope to explore 
-the potential of linguistically informed approaches
-to evaluate and improve the capabilities of LMs. 
-As an example, I am interested in leveraging 
-the language acquisition literature
-to evaluate and improve LMs' abilities 
-to acquire new words by inferring their meaning from context.
-Improving this ability might be achieved 
-via a self-supervised pre-training objective 
-that randomly replaces lexical items with new unseen words, 
+linguistically informed approaches
+that improve LM capabilities. 
+For example, I am interested in leveraging 
+research on linguistic change
+to enable LMs to adapt to new linguistic patterns.
+This might be achieved 
+by pretraining on augmented data
+that randomly introduces hypothetical but plausible linguistic changes,
 forcing the model to learn how to generalize effectively.
-Success here would result in LMs that are 
-more robust to linguistic distribution shifts
-and adapt to evolving language.
+Success would result in LMs that 
+can adapt to language it has not seen in training.
 
 \paragraph{Understanding LMs through formal languages}
 
 I am excited by projects 
 that borrow from formal language theory
 to increase our understanding of LMs.
-This approach makes it possible to answer 
-questions that might otherwise be very difficult to study via natural language.
+This approach enables answering 
+questions that we cannot study via natural language.
 For instance, I used regular languages to 
 \textbf{measure the capabilities of transformers as instruction followers}
 in RegSet, my first-author EMNLP 2022 paper~\cite{Finlayson2022WhatMI}. 
-Large, pre-trained LMs can solve some NLP tasks 
+Large, pretrained LMs solve some NLP tasks 
 by conditioning their generations on natural language instructions 
 for the task~\cite{mishra2021crosstask, Wei2021FinetunedLM}. 
-On the other hand, 
-research has shown that neural models consistently struggle with
+On the other hand, LMs often struggle with
 compositional generalization~\cite{Lake2018GeneralizationWS}. 
 This bodes poorly for the instruction following regime
-where the space of task descriptions is both intractably large 
-and highly compositional.
-Moreover, the fuzziness of natural language makes it difficult to
-predict what types of instructions may be challenging for transformers.
-To solve this predicament, 
-we propose a controllable proxy for studying instruction learning
-by studying LMs' ability to follow instructions in the form of regular expressions.
-We test the effects of attributes of regular languages,
-such as starfreeness~\cite{Salomaa1981JewelsOF}, on their difficulty as instructions.
-Our experiments lead us to a number of intriguing hypotheses 
-about what makes instruction learning hard, 
-including evidence that even large transformers struggle with modular counting 
-(e.g., determining whether something is even or odd). 
-By taking advantage of the well studied attributes of formal languages,
-we achieve fine-grained control over our data, leading to findings that
-would have been extremely difficult and expensive to obtain on natural data.
-This approach can be applied more broadly to develop benchmarks 
-that isolate and measure progress towards specific abilities 
-in transformers that we might hope to see in natural language settings.
+where the space of instructions is highly compositional.
+Moreover, natural language fuzziness complicates predicting
+which instructions are challenging for transformers.
+In response, we propose a proxy for instruction learning
+by studying instructions in the form of regular expressions.
+We test the effects of regular language attributes
+such as star-freeness~\cite{Salomaa1981JewelsOF}
+on their difficulty as instructions.
+Our experiments yield multiple hypotheses 
+for what makes instruction learning hard, 
+including evidence that even large transformers 
+struggle with modular counting 
+(e.g., distinguishing even from odd). 
+Here, well-studied attributes of formal languages afford us 
+fine-grained control over the data, 
+precipitating findings that would be difficult and expensive 
+to obtain on natural data.
+I hope to apply this approach more broadly 
+to isolate and measure progress towards other desirable abilities in LMs. 
 
 We can also use formal language theory to derive theoretical results 
 that help us understand neural LMs. 
 I am currently developing a framework for 
-understanding what transformers can learn from instructions. 
-In particular, I hope to show \textbf{which formal language families 
-are provably learnable by transformers 
-via instructions.}
+proving \textbf{which formal language families 
+are learnable by transformers via instructions.}
 This builds on prior work~\cite{Merrill2022LogPrecisionTA},
-and provides both a principled way to study transformers,
-and bounds on what we can expect them to learn.
-In the future, I would like to study
+and will hopefully provide bounds 
+on what we can expect transformers to learn from instructions.
+In the future, I would also like to study
 \textbf{the theoretical implications of sub-task decomposition.}
 I have previously worked on empirical studies in this area:
-in a preprint currently under submission 
-to ICLR 2023~\cite{Khot2022DecomposedPA},
-I implement a modular method for recursively prompting large LMs 
+in my ICLR 2023 submission~\cite{Khot2022DecomposedPA}
+I implement a modular, recursive LM prompting method
 which vastly improves generalization to longer sequence lengths 
-for certain types of tasks 
-when compared to other step-by-step reasoning styles.
-While exciting, it is not clear \emph{why} these methods are effective.
-Recent work~\cite{Wies2022SubTaskDE} 
-proves that subtask decomposition
-via step-by-step reasoning
-enables learning difficult tasks via fine-tuning.
-Extending this work
-by characterizing the additional computational power 
-intermediate reasoning affords transformers
-could explain why this prompting strategy has proven so successful.
+compared to other step-by-step reasoning styles.
+In the future, I am interested in understanding \emph{why} these methods work 
+by formally characterizing the additional computational power 
+that intermediate reasoning affords transformers.
 
-\paragraph{Evaluating and mitigating risks from general-purpose LMs}
+\paragraph{Evaluating general-purpose LMs}
 
-Comprehensive evaluation is critical to advancing general-purpose NLP systems,
-and existing benchmarks are often insufficient.
-For instance, existing datasets for are too narrow in scope 
+Comprehensive evaluation is critical to advancing general-purpose NLP systems.
+For example, existing datasets are too narrow in scope 
 to holistically evaluate math reasoning skills in LMs.
-To address this, I led a team of 11 researchers 
+To address this, I led 11 researchers 
 in compiling a diverse natural language 
-\textbf{math reasoning benchmark} 
-called \lila~\cite{Mishra2022LilaAU} (first-author paper, EMNLP 2022).
+\textbf{math reasoning benchmark}, 
+\lila~\cite{Mishra2022LilaAU} (first-author, EMNLP 2022).
 We curate over 140K math problems
-and provide annotations for reasoning via program synthesis, 
+with annotations for reasoning via program synthesis. 
 Our experiments show that multitask learning 
 and augmenting with a Python interpreter
-massively improves LM performance. 
-Our multitask model, Bh\=askara, 
-outperforms similarly-sized models
-when fine-tuning on new math reasoning tasks.
-Despite our modeling contributions, \lila also shows that LMs 
+massively improve LM performance. 
+Despite our modeling contributions, \lila shows that LMs 
 are woefully deficient at math reasoning,
-and demonstrates the need for unified evaluations for 
-aspiring general-purpose reasoning models.
-In my PhD I plan to continue to create thoughtful and comprehensive evaluations 
-to measure progress towards general-purpose models.
+and demonstrates the need for unified evaluations of this sort.
+Going forward, I plan to continue creating thoughtful, comprehensive benchmarks 
+for general-purpose models.
 
-During my PhD I also hope to expand research on the risks associated 
-with general-purpose NLP systems and how to mitigate them.
-For instance, I am currently developing a decoding procedure 
-for using frozen LMs as black boxes
-to generate their own task-specific prompts.
+\paragraph{Mitigating risks from general-purpose LMs} 
+
+During my PhD, I also hope to expand research 
+on general-purpose NLP system vulnerabilities and how to mitigate them.
+For instance, I am developing a decoding procedure where frozen LMs 
+generate their own task-specific prompts.
 I hope to apply this technique
-to study \textbf{adversarial prompts:}
-prompts that appear to elicit one behavior 
+to study \textbf{adversarial prompts}
+that appear to elicit one behavior 
 but cause the model to exhibit another.
 These prompts could be generated by simultaneously 
-decoding for fluency for one task and accuracy on another.
-Exposing these types of vulnerabilities
-enables the research community to better achieve
-secure and ethical general-purpose NLP systems. 
+decoding for fluency on one task and accuracy on another.
+Exposing LM vulnerabilities and finding ways to mitigate them
+enables progress 
+toward secure and ethical general-purpose NLP systems. 
 
-\paragraph{Fit for \inst} I am specifically interested in joining the CS program at 
-\inst because\ldots Professor NAME's work on\ldots is particularly interesting to me given my interest in\ldots
+\paragraph{At \inst} 
+
+I am especially interested in working 
+with Professors Danqi Chen and Karthik Narasimhan,
+based on our overlap in research interests. 
+In particular, I would be excited to work with Dr.\ Chen 
+on building controllable NLP systems 
+by developing our theoretical understanding of generative models. 
+With Dr.\ Narasimhan, I would be interested in working together 
+to build NLP systems that adapt to novel contexts, 
+especially by drawing on research in pragmatics and linguistic change. 
+I am also excited to collaborate with other faculty in Cornell's NLP group
+and NLP-adjacent groups such as CLab and C.Psyd.
 
 \bibliographystyle{unsrt}
 \bibliography{ref}

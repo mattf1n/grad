@@ -7,23 +7,23 @@
 \pagenumbering{gobble}
 
 \newcommand\lila{\textsc{L\={\i}la}\xspace}
-\newcommand\inst{Cornell\xspace}
+\newcommand\inst{Stanford\xspace}
 
 \begin{document}
 
 Pretrained language models (LMs) with billions of parameters 
-without fine-tuning
 increasingly function as general-purpose NLP systems, 
-meaning that they can often
-outperform task-specific models. 
-However, they can have unexpected failure modes 
+often outperforming task-specific models,
+even without fine-tuning.
+However, they have unexpected failure modes 
 and are notoriously difficult to control.
-Responsibly developing general-purpose LMs
-requires creating tools for understanding them.
-For instance, understanding how LMs learn from context
-can guide the development of better prompting techniques,
-and understanding LMs' susceptibility to adversarial attacks
-can the spur progress in creating safe LMs.
+I am excited about developing tools for understanding 
+and responsibly developing general-purpose LMs.
+For instance, knowing how LMs learn from context
+can guide us toward better techniques 
+for controlling them via natural language,
+and testing LMs' susceptibility to adversarial attacks
+can the spur progress toward safer NLP.
 As an undergraduate computational linguistics researcher at Harvard 
 (advised by Stuart Shieber and Yonatan Belinkov)
 and subsequently as a pre-doctoral researcher at AI2 
@@ -32,19 +32,19 @@ I have cultivated a multi-perspective approach to understanding and using LMs.
 I aim to build on this during my PhD
 by drawing on fields such as syntax and formal language theory 
 to create practical and theoretical frameworks  
-towards \textbf{understanding, evaluating, and safely using} language models 
+towards \textbf{understanding, evaluating, and safely using} LMs 
 as \textbf{general-purpose NLP systems.}
 
 \paragraph{Understanding and improving LMs through linguistics}
 
 Modern NLP is largely divorced 
 from our understanding of linguistics.
-Reconciling these can lend clarity to how LMs work, 
+I am interested in reconciling these 
+to lend clarity to how LMs work, 
 which is a first step towards improving them.
-As my first foray into research, I set out to 
-discover how modern LMs handle syntactic agreement.
-In my first-author ACL 2021 paper~\cite{finlayson-etal-2021-causal}
-we intervene on neurons in transformers 
+For instance, I investigated how modern LMs handle syntactic agreement
+in my first-author ACL 2021 paper~\cite{finlayson-etal-2021-causal}
+where we intervene on neurons in transformers 
 to observe their causal effect.
 We find, among other things, that transformers learn 
 two distinct mechanisms for number agreement,
@@ -163,17 +163,7 @@ toward secure and ethical general-purpose NLP systems.
 
 \paragraph{At \inst} 
 
-I am especially interested in working 
-with Professors Danqi Chen and Karthik Narasimhan,
-based on our overlap in research interests. 
-In particular, I would be excited to work with Dr.\ Chen 
-on building controllable NLP systems 
-by developing our theoretical understanding of generative models. 
-With Dr.\ Narasimhan, I would be interested in working together 
-to build NLP systems that adapt to novel contexts, 
-especially by drawing on research in pragmatics and linguistic change. 
-I am also excited to collaborate with other faculty in Cornell's NLP group
-and NLP-adjacent groups such as CLab and C.Psyd.
+\input{stanford}
 
 \bibliographystyle{unsrt}
 \bibliography{ref}

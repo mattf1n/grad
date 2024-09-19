@@ -28,3 +28,8 @@ Note: I do not think I will apply to all of these places, but these are the ones
 | Edinburgh | Motivations 500, background 500, research proposal 500 | Ponti, Pasquale Minervini |
 | Cornell   | PHS 1000                                               |                           |
 | Princeton |                                                        |                           |
+
+## Update
+
+I have decided to attend USC.
+Thank you everyone who helped me in this process!
